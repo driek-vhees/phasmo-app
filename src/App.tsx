@@ -4,6 +4,10 @@ import './App.css';
 
 interface AppProps {}
 
+const MyButton = () => {
+  return <div className="rounded-md ring-yellow-50 bg-yellow-400 p-2">I am a rounded</div>
+};
+
 function App({}: AppProps) {
   // Create the count state.
   const [count, setCount] = useState(0);
@@ -23,6 +27,7 @@ function App({}: AppProps) {
         <p>
           Page has been open for <code>{count}</code> seconds.
         </p>
+          <p><MyButton /></p>
         <p>
           <a
             className="App-link"
