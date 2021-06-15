@@ -9,7 +9,7 @@ type Ghost = {
 };
 
 
-const ghosts: Ghost[] = [
+const GHOSTS: ReadonlyArray<Ghost> = [
   {
     name: "Banshee",
     description: "A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.",
