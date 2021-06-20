@@ -1,6 +1,6 @@
-type EvidenceType = "emf_level_5" | "fingerprints" | "freezing_temperature" | "spirit_box" | "ghost_orbs" | "ghost_writing";
+export type EvidenceType = "emf_level_5" | "fingerprints" | "freezing_temperature" | "spirit_box" | "ghost_orbs" | "ghost_writing";
 
-type Ghost = {
+export type Ghost = {
   name: string;
   description: string;
   strengths: string;
@@ -8,8 +8,22 @@ type Ghost = {
   evidences: [EvidenceType, EvidenceType, EvidenceType],
 };
 
+export type Evidence = {
+  evidenceType: EvidenceType;
+  evidenceName: string;
+};
 
-const GHOSTS: ReadonlyArray<Ghost> = [
+export const EVIDENCES: ReadonlyArray<Evidence> = [
+  {evidenceType: "emf_level_5", evidenceName: "EMF lvl. 5"},
+  {evidenceType: "fingerprints", evidenceName: "Fingerprints"},
+  {evidenceType: "freezing_temperature", evidenceName: "Freezing tmp."},
+  {evidenceType: "spirit_box", evidenceName: "Spiritbox"},
+  {evidenceType: "ghost_orbs", evidenceName: "Ghost-orbs"},
+  {evidenceType: "ghost_writing", evidenceName: "Ghost-writing"},
+];
+
+
+export const GHOSTS: ReadonlyArray<Ghost> = [
   {
     name: "Banshee",
     description: "A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.",
