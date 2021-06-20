@@ -64,7 +64,7 @@ function App({}: AppProps) {
           <h1 className="text-4xl">Phasmophobia Ghost Evidence Matcher</h1>
         </div>
       </header>
-      <main className="flex-grow container bg-white my-5 mx-auto filter drop-shadow">
+      <main className="flex-grow md:container bg-white md:my-5 md:mx-auto filter drop-shadow p-3">
         <p>Possible ghosts</p>
         <ul>
         {
