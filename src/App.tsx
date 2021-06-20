@@ -65,28 +65,32 @@ function App({}: AppProps) {
         </div>
       </header>
       <main className="flex-grow md:container bg-white md:my-5 md:mx-auto filter drop-shadow p-3">
-        <p>Possible ghosts</p>
-        <ul>
-        {
-          GHOSTS
-          .filter((ghost) => {
-            return positiveEvidences.every((foundEvidenceType) => {
-              return ghost.evidences.includes(foundEvidenceType);
-            })
-          })
-          .map(ghost => {
-            return (
-              <li>
-                {ghost.name}
-                {positiveEvidences.length > 0 && positiveEvidences.length < 3 ? (
-                  <span> [{ghost.evidences.filter((evidenceType) => !positiveEvidences.includes(evidenceType)).map(evidenceType => evidenceTypeMapping[evidenceType]?.evidenceName).join(", ")}]</span>
-                ) : null}
-              </li>
-            );
-          })
-        }
-        </ul>
-        <br />
+        {positiveEvidences.length > 0 ? (
+          <>
+            <p>Possible ghosts</p>
+            <ul>
+            {
+              GHOSTS
+              .filter((ghost) => {
+                return positiveEvidences.every((foundEvidenceType) => {
+                  return ghost.evidences.includes(foundEvidenceType);
+                })
+              })
+              .map(ghost => {
+                return (
+                  <li>
+                    {ghost.name}
+                    {positiveEvidences.length > 0 && positiveEvidences.length < 3 ? (
+                      <span> [{ghost.evidences.filter((evidenceType) => !positiveEvidences.includes(evidenceType)).map(evidenceType => evidenceTypeMapping[evidenceType]?.evidenceName).join(", ")}]</span>
+                    ) : null}
+                  </li>
+                );
+              })
+            }
+            </ul>
+            <br />
+          </>
+        ) : null}
         <p>Found evidences</p>
         <ul>
         {EVIDENCES
