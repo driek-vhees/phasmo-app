@@ -3,11 +3,6 @@ import { Evidence, EVIDENCES, EvidenceType, Ghost, GHOSTS } from './data';
 
 interface AppProps {}
 
-const MyButton = () => {
-  return <div className="rounded-md ring-yellow-50 bg-yellow-400 p-2">I am a rounded</div>
-};
-
-
 type EvidenceButtonType = {
   evidence: Evidence;
   onAdd: (evidenceType: EvidenceType) => void;
